@@ -14,9 +14,9 @@ class DevConfig(Config):
     MYSQL_USER = "root"
     MYSQL_PASSWORD = "123456"
     # 非关系型数据库配置
-    REDIS_HOST = ""
+    REDIS_HOST = "39.105.195.48"
     REDIS_PORT = 6379
-    REDIS_PASSWORD = ""
+    REDIS_PASSWORD = "123456"
 
 class ReleaseConfig(Config):
     ENV_NAME = 'Release'
