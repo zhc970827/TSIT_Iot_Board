@@ -9,10 +9,10 @@ class DevConfig(Config):
     PORT = 8000
 
     # 关系型数据库配置
-    MYSQL_HOST = "39.105.195.48"
-    MYSQL_PORT = 3369
-    MYSQL_USER = "root"
-    MYSQL_PASSWORD = "123456"
+    PGSQL_HOST = "39.105.195.48"
+    PGSQL_PORT = 5432
+    PGSQL_USER = "root"
+    PGSQL_PASSWORD = "123456"
     # 非关系型数据库配置
     REDIS_HOST = "39.105.195.48"
     REDIS_PORT = 6379

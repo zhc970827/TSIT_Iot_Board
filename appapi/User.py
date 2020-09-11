@@ -1,13 +1,11 @@
-from . import api
 import time
-import random
-from fastapi import Query, Form, Depends, HTTPException
-from starlette.requests import Request
-from pydantic import BaseModel
 
-from model.WAModel import WaUser, WaUserMembership
-from model.ParamModel import User
+from fastapi import Form, Depends, HTTPException
+from starlette.requests import Request
+
 from common import Func, Utils, Redis
+from model.WAModel import WaUser, WaUserMembership
+from . import api
 
 
 async def verifyToken(user_token: str = Form(...)):
@@ -51,7 +49,7 @@ async def userRegister(u_phone: str = Form(...), u_password: str = Form(...),
         user = WaUser.create(u_phone=u_phone, u_password=enctyped_password,
                              u_password_salt=salt)
     # 这个是自定义的返回格式
-    return Func.jsonResult({'u_id': user.u_id})
+    return Func.jsonResult({'u_id': user.u_id},)
 
 
 @api.post('/sign_in', tags=['用户'], summary='登录获取token', description='登录获取token')

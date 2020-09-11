@@ -1,21 +1,22 @@
 # coding=utf-8
 # !/usr/bin/python -u
 import codecs
-import time
 import sys
-from fastapi import FastAPI, Depends, Header, HTTPException, Request
-import uvicorn
-from fastapi.middleware.cors import CORSMiddleware
-from starlette.templating import Jinja2Templates
-from starlette.staticfiles import StaticFiles
+import time
 
-from common.config import app_config
+import uvicorn
+from fastapi import FastAPI, Header, HTTPException, Request
+from fastapi.middleware.cors import CORSMiddleware
+from starlette.staticfiles import StaticFiles
+from starlette.templating import Jinja2Templates
+
 from appapi import api
+from common.config import app_config
 
 sys.stdout = codecs.getwriter("utf-8")(sys.stdout.detach())
 
 app = FastAPI(title='workapp',
-              description='图片转文字工具',
+              description='',
               version='1.0')
 
 
